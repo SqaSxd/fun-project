@@ -91,44 +91,19 @@ public class FlowControlApp {
 	 * Write a program that can ask the user for a grade value and print the
 	 * associated grade letter. 7-10 -->> A 4-6 -->> B 0-3 -->> C others -->> D
 	 */
-	/*
-	 * private static void evalGrade() { Scanner scanner = new
-	 * Scanner(System.in);
-	 * System.out.print("Please enter hom many grades you want to evaluate: ");
-	 * String input = scanner.nextLine(); int totalCount =
-	 * Integer.parseInt(input); double totalGrade = 0.0; for (int i = 0; i <
-	 * totalCount; i++) { System.out.print("Please enter a grade: "); totalGrade
-	 * += Integer.parseInt(scanner.nextLine()); }
-	 * System.out.println("The average grade is: " + (totalGrade / totalCount));
-	 * }
-	 */
 	private static void evalGrade() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Please enter a grade value(0-10): ");
 		String input = scanner.nextLine();
 		int number = Integer.parseInt(input);
-		switch (number) {
-		case 0:
-		case 1:
-		case 2:
-		case 3:
+		if (number >= 0 && number <= 3)
 			System.out.println("Grade C");
-			break;
-		case 4:
-		case 5:
-		case 6:
+		else if (number >= 4 && number <= 6)
 			System.out.println("Grade B");
-			break;
-		case 7:
-		case 8:
-		case 9:
-		case 10:
+		else if (number >= 7 && number <= 10)
 			System.out.println("Grade A");
-			break;
-		default:
+		else
 			System.out.println("Grade D");
-			break;
-		}
 	}
 
 	/**
